@@ -56,3 +56,22 @@ via 192.168.177.10 : Địa chỉ IP ra/vào như là bộ định tuyến thứ
 ens33: là card NIC sẽ dùng để truy nhập, nhận gửi dữ liệu vào network 172.16.1.0/22 (card NIC này có IP set là 192.168.177.10 và nằm trong mạng 192.168.177.0/24)
 Lưu ý: Setting của Static route cũng là tạm giống như virtual IP, nếu sử dụng lệnh service network restart thì sẽ bị mất các setting tạm thời này.
 ---------------------------------------------------------------------------------------------------------
+
+
+*, Hostname:
+Trước khi đổi hostname, nên set IP tĩnh cho máy. thường set xong dùng để làm DNS server/mail server/...
+Đăng nhập su, chỉnh sửa file /etc/hosts , thêm 1 dòng mới với cấu trúc <IP tĩnh> <tên máy> rồi sau đó lưu lại. Ví dụ:
+#####
+192.168.101.128 mail.vmwaretest.local
+#####
+
+
+Tiếp tục chỉnh sửa file /etc/sysconfig/network và sau đó lưu lại.  # tên máy giống như ở trên #
+##########
+NETWORKING=yes
+NETWORKING_IPV6=yes
+HOSTNAME="mail.vmwaretest.local"
+#########
+
+Cuối cùng, gõ lệnh sau để áp dụng hostname mới
+hostnamectl set-hostname mail.vmwaretest.local && reboot
