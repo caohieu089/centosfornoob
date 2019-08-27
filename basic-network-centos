@@ -2,7 +2,7 @@
 *Cấu hình Network 
 a, Cài đặt – setting mạng
   Trước tiên để tiện cho việc kiểm tra IP sau khi setting thì nên cài tool network trước: đăng nhập su, nhập password của root rồi gõ lệnh sau (yêu cầu mạng đang ở DHCP/Automatic):
-      yum install net-tools -y
+      yum install net-tools -y 
 Sau đó nhấn y để tải và cài. Sau khi cài đặt xong:
 +tại dấu nhắc, gõ nmcli d để kiểm tra xem state của NIC/other NIC
 	+tại dấu nhắc, gõ nmtui
