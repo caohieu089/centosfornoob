@@ -21,8 +21,8 @@ service webmin start
 service ufw start 
 chkconfig webmin on
 ufw allow 10000
-service ufw restart
-service sshd restart
+service ufw restart && service sshd restart
+
 
 #sửa file /etc/webmin/miniserv.conf để tránh bị lỗi xác thực ssl:
 Tìm dòng ssl=1, sửa thành ssl=0 và tiến hành lưu lại
@@ -30,7 +30,7 @@ Tìm dòng ssl=1, sửa thành ssl=0 và tiến hành lưu lại
 #Restart webmin
 service webmin restart
 
-Tiến hành đăng nhập với tài khoản root trước. sau đó tạo các tài khoản con  
+Tiến hành đăng nhập trên web với địa chỉ IP:10000 với tài khoản root trước. sau đó tạo các tài khoản con  
 
 
 
