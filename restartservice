@@ -5,7 +5,11 @@ supervisorctl restart all
 
 
 
-
-
+//restart service NextCloud
+sudo systemctl restart apache2
+sudo systemctl restart nginx
+systemctl restart php-fpm
+sudo systemctl restart mysql
+sudo docker restart onlyofficedocumentserver
 
 
