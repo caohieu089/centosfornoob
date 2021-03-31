@@ -1,0 +1,5 @@
+//restart service OnlyOffice sau khi edit file:
+
+sudo service nginx reload
+supervisorctl restart all
+
